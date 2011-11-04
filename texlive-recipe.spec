@@ -46,6 +46,7 @@ access to Bookman, and to BrushScript-Italic fonts.
 %doc %{_texmfdistdir}/doc/latex/recipe/README
 %doc %{_texmfdistdir}/doc/latex/recipe/sample.pdf
 %doc %{_texmfdistdir}/doc/latex/recipe/sample.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -56,3 +57,5 @@ access to Bookman, and to BrushScript-Italic fonts.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
