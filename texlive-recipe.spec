@@ -6,7 +6,7 @@
 # catalog-version 0.9
 Name:		texlive-recipe
 Version:	0.9
-Release:	3
+Release:	4
 Summary:	A LaTeX class to typeset recipes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/recipe
