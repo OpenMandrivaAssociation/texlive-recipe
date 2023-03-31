@@ -1,6 +1,6 @@
 Name:		texlive-recipe
 Version:	54080
-Release:	1
+Release:	2
 Summary:	A LaTeX class to typeset recipes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/recipe
