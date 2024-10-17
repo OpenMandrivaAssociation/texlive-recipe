@@ -3,7 +3,7 @@ Version:	54080
 Release:	2
 Summary:	A LaTeX class to typeset recipes
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/recipe
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/recipe
 License:	PD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/recipe.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/recipe.doc.r%{version}.tar.xz
