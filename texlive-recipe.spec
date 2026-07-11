@@ -1,43 +1,22 @@
-Name:		texlive-recipe
-Version:	54080
-Release:	2
+%global tl_name recipe
+%global tl_revision 54080
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.9
+Release:	%{tl_revision}.1
 Summary:	A LaTeX class to typeset recipes
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/recipe
-License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/recipe.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/recipe.doc.r%{version}.tar.xz
+License:	pd
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/recipe.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/recipe.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The layout design is relative straightforward (and traditional:
-see 'sample output' under 'documentation'); the class needs
-access to Bookman, and to BrushScript-Italic fonts.
+The layout design is relatively straightforward (and traditional: see
+'sample output' under 'documentation'); the class uses the Bookman and
+the BrushScript-Italic fonts.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/recipe/recipe.cls
-%doc %{_texmfdistdir}/doc/latex/recipe/README
-%doc %{_texmfdistdir}/doc/latex/recipe/sample.pdf
-%doc %{_texmfdistdir}/doc/latex/recipe/sample.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
